@@ -1,3 +1,5 @@
+import Head from 'next/head'; // Import Head from Next.js
+
 import Link from "next/link";
 import { useEffect } from "react";
 import { connect } from "react-redux";
@@ -12,93 +14,70 @@ const Header = ({ walletToggle, navigationToggle }) => {
   }, []);
 
   return (
-    <header id="header">
-      <div className="header">
-        <div className="header_in">
-          <div className="trigger_logo">
-            {/* <div className="trigger" onClick={() => navigationToggle(true)}> */}
-            <div
-              style={{
-                borderRadius: "20%",
-                background: "white",
-                padding: "5px", // Adjust the padding as needed
-              }}
-            >
-              <IconButton
-                style={{ fontSize: "4rem", color: "purple" }} // Adjust the fontSize as needed
-                onClick={() => navigationToggle(true)}
-              >
-                <MenuIcon />
-              </IconButton>
-            </div>
+    <>
+      {/* Add Head component for managing head content */}
+      <Head>
+        <style>{`
+          .logo {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            width: 150px;
+            z-index: 1000;
+          }
 
-            {/* </div> */}
-            <div className="logo">
-              <Link href="/">
-                <img src="/img/logo.png" alt="" />
-              </Link>
+          .logo img {
+            width: 100%;
+            height: auto;
+          }
+
+          .nav ul {
+            font-family: "Montserrat, sans-serif";
+          }
+        `}</style>
+      </Head>
+
+      <header id="header">
+        <div className="header">
+          <div className="header_in">
+            <div className="trigger_logo">
+              <div className="logo">
+                <Link href="/">
+                  <img src="/img/logo.png" alt="" />
+                </Link>
+              </div>
             </div>
-          </div>
-          <div className="nav" style={{ opacity: 1 }}>
-            <ul
-              style={{
-                fontFamily: "Montserrat, sans-serif", // Add this line to set the font
-              }}
-            >
-              <li>
-                <Link href="/#home" onClick={() => navigationToggle(false)}>
-                  <span
+            <div className="nav" style={{ opacity: 1 }}>
+              <ul>
+                <li>
+                  <Link href="/#home" onClick={() => navigationToggle(false)}>
+                    <span className="creative_link">Home</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#collection"
                     className="creative_link"
-                    style={{
-                      fontFamily: "Montserrat, sans-serif", // Add this line to set the font
-                    }}
+                    onClick={() => navigationToggle(false)}
                   >
-                    Home
-                  </span>
-                </Link>
-              </li>
-
-              <li>
-                <Link
-                  href="/#about"
-                  className="creative_link"
-                  onClick={() => navigationToggle(false)}
-                >
-                  <span className="creative_link">Plans</span>
-                 </Link>
-              </li>
-              <li>
-               <Link
-                  href="/#collection"
-                  className="creative_link"
-                  onClick={() => navigationToggle(false)}
-                >
-                  <span className="creative_link">Collection</span>
-               </Link>
-              </li>
-              <li>
-                <Link
-                  href="/#news"
-                  className="creative_link"
-                  onClick={() => navigationToggle(false)}
-                >
-                  <span className="creative_link">Blog</span>
-                </Link>
-              </li>
-              <li>
-              <Link
-                  href="/#contact"
-                  className="creative_link"
-                  onClick={() => navigationToggle(false)}
-                >
-                  <span className="creative_link">Contact</span>
-                 </Link>
-              </li>
-            </ul>
+                    <span className="creative_link">Collection</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#contact"
+                    className="creative_link"
+                    onClick={() => navigationToggle(false)}
+                  >
+                    <span className="creative_link">Contact</span>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 

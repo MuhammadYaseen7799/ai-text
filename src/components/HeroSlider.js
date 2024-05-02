@@ -184,7 +184,7 @@ const HeroSlider = () => {
   samples: "1",
   num_inference_steps: "30",
   safety_checker: false,
-  enhance_prompt: "true",
+  
   seed: null,
   guidance_scale: 2,
   multi_lingual: "false",
@@ -277,10 +277,10 @@ const HeroSlider = () => {
       <div className="container">
         <h3
           className="fn__maintitle big"
-          data-text="FANTASISE AI ART" FANTASISE AI ART
+          data-text="FUNKAR AI ART GENERATOR" FUNKAR AI ART GENERATOR
           data-align="center"
         >
-          FANTASISE AI ART
+          FUNKAR AI ART GENERATOR
         </h3>
         {/* Slider */}
         <div className="fn_cs_slider" data-responsive="on">

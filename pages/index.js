@@ -28,13 +28,7 @@ const Index = () => {
       {/* !Section Divider */}
       {/* Section RoadMap */}
       
-      <SectionDivider />
-      {/* !Section Divider */}
-      {/* Section News */}
-      <News />
-      {/* !Section News */}
-      {/* Section Divider */}
-      <SectionDivider />
+  
       {/* !Section Divider */}
       {/* Section */}
       <Contact />
