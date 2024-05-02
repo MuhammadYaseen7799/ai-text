@@ -8,11 +8,11 @@ const Footer = () => {
             <p>
               Designed &amp; Developed by{" "}
               <a
-                href="https://mail.google.com/mail/u/0/h/"
+                href="www.artpulsestudio.com"
                 target="_blank"
                 rel="noreferrer"
               >
-                ArtsByYaseen
+                 ArtPulse Studio
               </a>
             </p>
           </div>

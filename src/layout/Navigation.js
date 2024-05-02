@@ -48,11 +48,11 @@ const Navigation = ({ navigation, navigationToggle }) => {
               <p>
                 Designed &amp; Developed by{" "}
                 <Link
-                  href="https://mail.google.com/mail/u/0/h/"
+                  href="www.artpulsestudio.com"
                   target="_blank"
                   rel="noreferrer"
                 >
-                  ArtsByYaseen
+                  ArtPulse Studio
                 </Link>
               </p>
             </div>
