@@ -5,6 +5,7 @@ import { navigationToggle, walletToggle } from "../redux/actions/siteSettings";
 const MobileNavigation = ({ walletToggle, navigationToggle }) => {
   const [toggle, setToggle] = useState(false);
   return (
+    
     <Fragment>
       <div className="metaportal_fn_mobnav">
         <div className="mob_top">

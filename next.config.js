@@ -16,4 +16,4 @@ axios.post('https://stablediffusionapi.com/api/v3/text2img', { text: inputText }
     console.error('Error:', error);
   });
 */
-module.exports = nextConfig
+

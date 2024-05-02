@@ -73,6 +73,7 @@ const HeroSlider = () => {
     });
   }, []);
 
+
   const sliderDo = (sliderTop, sliderBottom, activeIndex) => {
     var topLength = sliderTop.getElementsByTagName("li").length;
     if (activeIndex > topLength) {
@@ -146,15 +147,32 @@ const HeroSlider = () => {
   const closeImageDialog = () => {
     setModalIsOpen(false);
   };
+
+  
+  useEffect(() => {
+    let timerId;
+    console.log('timer');
+
+    if (result) {
+      console.log('inside');
+      timerId = setTimeout(() => {
+      setLoadImage(true);
+      openImageDialog();
+
+      }, 20000); // 10 seconds in milliseconds
+    }
+    return () => clearTimeout(timerId);
+  }, [result]);
+
   const model_styles = [
-    "juggernaut-xl",
-    "xsdmodelx",
-    "dream-shaper-8797",
-    "midjourney",
-    "sdxl-unstable-diffusers-y",
-    "ae-sdxl-v1",
-    "crystal-clear-xlv1",
-    "sdxl",
+    "sketch",
+    "sketch",
+    "sketch",
+    "sketch",
+    "sketch",
+    "sketch",
+    "sketch",
+    "sketch",
   ];
   const model_img_paths = [
     "/img/Model/juggernaut-xl.jpg",
@@ -170,16 +188,15 @@ const HeroSlider = () => {
   useEffect(() => {
     console.log("result", result);
   }, [result]);
-  const HandleAPICall = async (ModelId) => {
+  const HandleAPICall = async () => {
     try {
-      const model_id = ModelId;
       setLoadImage(false);
       const requestData = {
         key: "xhjjeNlNe5qfoTfKc6w7oj4shoFZ4wxRxL7CTeWlJ8BImrZWL2kUHb1Ob1gs",
-        prompt: TextAreaValue, // Use the textarea value
+        prompt: TextAreaValue + "," + ImgStyle, // Use the textarea value
         negative_prompt:
           "(text, watermark:2.0), gaussian noise, worst quality, ...", // Your negative prompt
-        model_id: model_id,
+        model_id: "juggernaut-xl",
         width: "1024",
   height: "1024", 
   samples: "1",
@@ -211,7 +228,6 @@ const HeroSlider = () => {
         },
         body: JSON.stringify(requestData),
       });
-      setLoadImage(true);
       if (response.ok) {
         const responseData = await response.json();
 
@@ -221,9 +237,14 @@ const HeroSlider = () => {
           responseData.output &&
           responseData.output.length > 0
         ) {
+//           let new_result = responseData.output[0];
+// new_result = new_result.replace(/\\/g, '');
+
           setResult(responseData.output[0]);
+          // setResult(responseData.output[0]);
+          
           console.log("img", result);
-          openImageDialog();
+          // openImageDialog();
 
           // Store the URL in the result state
         } else if (responseData.status === "processing") {
@@ -444,7 +465,7 @@ const HeroSlider = () => {
                   onClick={() => {
                     setSelectedImage(index);
                     setImgStyle(model_styles[index]);
-                  }}
+                                    }}
                 >
                   <img
                     src={model_img_paths[index]}
@@ -477,7 +498,8 @@ const HeroSlider = () => {
                 variant="contained"
                 disabled={selectedImage == null ? true : false}
                 onClick={() => {
-                  HandleAPICall(ImgStyle);
+                
+                  HandleAPICall();
                 }}
                 width={"100%"}
                 sx={{
