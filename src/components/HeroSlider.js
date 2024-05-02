@@ -166,23 +166,19 @@ const HeroSlider = () => {
 
   const model_styles = [
     "sketch",
-    "sketch",
-    "sketch",
-    "sketch",
-    "sketch",
-    "sketch",
-    "sketch",
-    "sketch",
+    
+    "disney",
+   
+    "anime",
+    "cartoon",
+    "fantasy",
   ];
   const model_img_paths = [
-    "/img/Model/juggernaut-xl.jpg",
-    "/img/Model/xsdmodelx.jpg",
-    "/img/Model/dream-shaper-8797.jpg",
+    "/img/Model/sketch.png",
     "/img/Model/midjourney.jpg",
-    "/img/Model/sdxl-unstable-diffusers-y.jpg",
-    "/img/Model/AE-SDXL-V1-Model1.jpg",
-    "/img/Model/crystal-clear-xlv1.jpg",
-    "/img/Model/SDXL.jpg",
+    "/img/Model/anime.png",
+    "/img/Model/cartoon.png",
+    "/img/Model/Fantasy.png",
   ];
   const API_ENDPOINT = "https://modelslab.com/api/v6/realtime/text2img";
   useEffect(() => {
