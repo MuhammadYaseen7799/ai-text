@@ -11,6 +11,7 @@ import {
 import SaveAltIcon from "@mui/icons-material/SaveAlt";
 import DialogTitle from "@mui/material/DialogTitle";
 import Dialog from "@mui/material/Dialog";
+
 const HeroSlider = () => {
   // Hero slider
   useEffect(() => {
@@ -279,6 +280,10 @@ const HeroSlider = () => {
           className="fn__maintitle big"
           data-text="FUNKAR AI ART GENERATOR" FUNKAR AI ART GENERATOR
           data-align="center"
+          style={{
+    fontFamily: 'Montserrat, sans-serif',
+    fontWeight: 'bold',
+  }}
         >
           FUNKAR AI ART GENERATOR
         </h3>

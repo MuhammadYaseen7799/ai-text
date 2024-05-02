@@ -51,7 +51,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
               <ul>
                 <li>
                   <Link href="/#home" onClick={() => navigationToggle(false)}>
-                    <span className="creative_link">Home</span>
+                    <span className="creative_link" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 'bold', }}>Home</span>
                   </Link>
                 </li>
                 <li>
@@ -60,7 +60,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
                     className="creative_link"
                     onClick={() => navigationToggle(false)}
                   >
-                    <span className="creative_link">Collection</span>
+                    <span className="creative_link" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 'bold', }}>Collection</span>
                   </Link>
                 </li>
                 <li>
@@ -69,7 +69,7 @@ const Header = ({ walletToggle, navigationToggle }) => {
                     className="creative_link"
                     onClick={() => navigationToggle(false)}
                   >
-                    <span className="creative_link">Contact</span>
+                    <span className="creative_link" style={{ fontFamily: 'Montserrat, sans-serif', fontWeight: 'bold', }}>Contact</span>
                   </Link>
                 </li>
               </ul>

@@ -10,7 +10,7 @@ const Footer = () => {
               <a
                 href="www.artpulsestudio.com"
                 target="_blank"
-                rel="noreferrer"
+               
               >
                  ArtPulse Studio
               </a>
