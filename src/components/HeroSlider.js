@@ -198,7 +198,6 @@ const HeroSlider = () => {
   samples: "1",
   num_inference_steps: "30",
   safety_checker: false,
-  
   seed: null,
   guidance_scale: 2,
   multi_lingual: "false",
@@ -261,11 +260,7 @@ const HeroSlider = () => {
     }
   };
 
-  // const handleOpenResult = () => {
-  //   if (result) {
-  //     window.open(result, "_blank"); // Open the URL in a new tab
-  //   }
-  // };
+
 
   const [image_number, set_image_number] = useState(0);
   const downloadImage = (url) => {
@@ -319,7 +314,7 @@ const HeroSlider = () => {
         <img src="/img/1x1.jpg" alt="" className="image-hover" />
         <div className="item_in">
           <div className="img" style={{ backgroundImage: 'url("/img/slider/1.png")' }}>
-            {/* Add text overlay here */}
+      
            
           </div>
         </div>
